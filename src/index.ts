@@ -11,9 +11,6 @@ interface QwikPluginOptions {
     render: ServerRenderOptions['render']
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-const noop = () => {}
-
 const qwikPlugin: FastifyPluginAsync<QwikPluginOptions> = async (fastify, options) => {
     const {render, buildDir, distDir} = options
 
@@ -34,8 +31,8 @@ const qwikPlugin: FastifyPluginAsync<QwikPluginOptions> = async (fastify, option
     })
 
     fastify.setNotFoundHandler(async (request, response) => {
-        await router(request.raw, response.raw, noop)
-        await notFound(request.raw, response.raw, noop)
+        await router(request.raw, response.raw, console.error)
+        await notFound(request.raw, response.raw, console.error)
     })
 }
 
