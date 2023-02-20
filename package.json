@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@builder.io/qwik-city": "^0.2.1",
+    "@fastify/static": "^6.9.0",
     "fastify-plugin": "^4.5.0"
   },
   "devDependencies": {
