@@ -1,0 +1,35 @@
+{
+  "name": "fastify-qwik",
+  "version": "0.1.0",
+  "description": "Fastify plugin for Qwik City",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest",
+    "lint": "eslint ./src --ext .ts",
+    "prepare": "pnpm lint --fix && pnpm build"
+  },
+  "dependencies": {
+    "fastify-plugin": "^4.5.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2",
+    "vitest": "^0.28.5"
+  },
+  "keywords": [
+    "fastify",
+    "qwik"
+  ],
+  "author": "Matteo Pietro Dazzi",
+  "license": "MIT"
+}
