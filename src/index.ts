@@ -33,6 +33,10 @@ const qwikPlugin: FastifyPluginAsync<QwikPluginOptions> = async (fastify, option
         decorateReply: false
     })
 
+    fastify.setDefaultRoute(async (request, response) => {
+        router(request, response, noop)
+    })
+
     fastify.setNotFoundHandler(async (request, response) => {
         await notFound(request.raw, response.raw, noop)
     })
