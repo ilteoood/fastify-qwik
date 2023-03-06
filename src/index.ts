@@ -5,13 +5,13 @@ import qwikCityPlan from '@qwik-city-plan'
 import type {FastifyPluginAsync} from 'fastify'
 import fastifyPlugin from 'fastify-plugin'
 
-interface QwikPluginOptions {
+export interface FastifyQwikOptions {
     distDir: string
     buildDir: string
     render: ServerRenderOptions['render']
 }
 
-const qwikPlugin: FastifyPluginAsync<QwikPluginOptions> = async (fastify, options) => {
+const qwikPlugin: FastifyPluginAsync<FastifyQwikOptions> = async (fastify, options) => {
     const {render, buildDir, distDir} = options
 
     const {router, notFound} = createQwikCity({render, qwikCityPlan})
@@ -36,4 +36,4 @@ const qwikPlugin: FastifyPluginAsync<QwikPluginOptions> = async (fastify, option
     })
 }
 
-export default fastifyPlugin(qwikPlugin)
+export const fastifyQwik = fastifyPlugin(qwikPlugin)
